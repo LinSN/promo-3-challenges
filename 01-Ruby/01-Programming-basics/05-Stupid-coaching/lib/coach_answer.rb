@@ -12,6 +12,7 @@ end
 def coach_answer_enhanced(your_message)
   if your_message == "You're so bad teacher"
     return "go fuck yourself"
+  end
   # TODO: return coach answer to your_message, with additional custom rules of yours !
 end
 
