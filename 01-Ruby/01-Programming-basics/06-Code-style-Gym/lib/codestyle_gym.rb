@@ -1,4 +1,4 @@
-class Player_moving
+class PlayerMoving
   GRID_POSITIONS = (1..100).to_a
 
   def initialize (position)
@@ -13,7 +13,7 @@ class Player_moving
   end
 
   def play
-    if self.status_Player == :play
+    if self.status_player == :play
       if rand(1..100) < 50
         move(rand(1..10))
       else
@@ -26,7 +26,7 @@ class Player_moving
     @position = 101
   end
 
-  def status_Player
+  def status_player
     if @position > 100
       :win
     elsif @position < 0
@@ -36,20 +36,20 @@ class Player_moving
     end
   end
 
-  def hasWon
-    status_Player  == :win
+  def has_won
+    status_player  == :win
   end
 
 end
 
-player = Player_moving.new(50)
+player = PlayerMoving.new(50)
 player.play
-puts player.status_Player == player.play # true
+puts player.status_player == player.play # true
 player.cheat
-puts player.hasWon
+puts player.has_won
 
 begin
-  Player_moving.new(110)
+  PlayerMoving.new(110)
 rescue RuntimeError => e
   puts e.to_s == "Initial position must be between 1 and 100" # true
 end
