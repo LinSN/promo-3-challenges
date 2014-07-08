@@ -3,7 +3,7 @@ class Player_moving
 
   def initialize (position)
     @position = position
-    unless Grid_POSITIONS.include? position
+    unless Grid_POSITIONS.include? @position
       raise "Initial position must be between 1 and 100"
     end
   end
