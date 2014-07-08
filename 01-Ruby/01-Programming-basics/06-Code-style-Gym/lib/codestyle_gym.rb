@@ -15,7 +15,7 @@ class Player_moving
     if rand(1..100) < 50
       move(rand(1..10))
     else
-      move(rand(1..10))
+      move(-rand(1..10))
     end
   end
 
@@ -24,24 +24,24 @@ class Player_moving
   end
 
   def status_Player
-      if( @position >   100 )
-        win
-      elsif @position<0
-        loose
-      else
-        play
-      end
+    if @position > 100
+      "win"
+    elsif @position < 0
+      "loose"
+    else
+      "play"
+    end
   end
 
   def hasWon
-    status_Player  == win
+    status_Player  == "win"
   end
 
 end
 
 player = Player_moving.new(50)
 player.play
-puts player.status_Player == play # true
+puts player.status_Player == player.play # true
 player.cheat
 puts player.hasWon
 
