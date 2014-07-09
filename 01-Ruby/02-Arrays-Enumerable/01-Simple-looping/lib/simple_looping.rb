@@ -31,10 +31,8 @@ end
 def sum_recursive(min,max)
   #TODO (optional): return the sum of the integers between min and max
   #CONSTRAINT: you should use a recursive algorithm, i.e. the method should call itself
-
-  return min if min == max
-  return total = min + sum_recursive(min + 1, max) if min < max
   raise ArgumentError if min > max
+  (min == max) ? min : min + sum_recursive(min + 1, max)
 end
 
 puts sum_with_while(1,4)
