@@ -1,7 +1,5 @@
 def bugged_concatenate(*array)
-  ma_string = ""
-  array.each{ |output|  ma_string.insert(ma_string.size,"#{output.to_s}")  }
-  return ma_string.upcase
+  array.join.upcase
 end
 
 def build_1984_title
