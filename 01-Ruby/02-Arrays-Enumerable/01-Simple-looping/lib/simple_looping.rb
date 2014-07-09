@@ -1,15 +1,42 @@
 def sum_with_while(min,max)
-  #TODO: return the sum of the integers between min and max
-  #CONSTRAINT: you should use a while..end structure
+  total = 0
+  count = min
+  # tant que le compteur est inferieur au max
+    # j'ajoute le compteur au total
+    # j'increment mon compteur de 1
+
+  while count <= max
+    total += count
+    count += 1
+  end
+
+  total
+
 end
 
+
+
 def sum_with_for(min,max)
+  range = (min..max).to_a
+    for num in range
+      min += range[num].to_i
+    end
+  return min
+end
+
+
   #TODO: return the sum of the integers between min and max
   #CONSTRAINT: you should use a for..end structure
-end
 
 def sum_recursive(min,max)
   #TODO (optional): return the sum of the integers between min and max
   #CONSTRAINT: you should use a recursive algorithm, i.e. the method should call itself
+
+  return min if min == max
+  return total = min + sum_recursive(min + 1, max) if min < max
+  raise ArgumentError if min > max
 end
 
+puts sum_with_while(1,4)
+puts sum_with_for(1,4)
+puts sum_recursive(1, 4)
