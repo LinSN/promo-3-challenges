@@ -10,19 +10,10 @@ begin
   # TODO: Add the name we just gotto the students array
 
 end while name != ""
-
-def final_sentence(param,tab)
-  if param==wagon_sort(tab).last
-    print "and #{param}."
-  elsif param==wagon_sort(tab).last(2).first
-    print "#{param} "
-   else
-    print "#{param}, "
-  end
-end
+  classified_wagon = wagon_sort(students)
 
   print "Congratulations! Your Wagon has #{students.size} students :  "
-  wagon_sort(students).each{|x| final_sentence(x,students)}
+  puts classified_wagon[0..students.size-2].join(", ") + " and " + classified_wagon.last
 
 
 # TODO: Call `wagon_sort` method and display the sorted student list
