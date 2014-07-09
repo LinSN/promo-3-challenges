@@ -26,7 +26,7 @@ def asking_for_card?(score)
     puts "Card ? (type 'Y' or 'yes' for a new card)"
     choice = gets.chomp
       case choice
-        when "Yes" then return true
+        when "yes" then return true
         when "Y" then return true
         else return false
       end
