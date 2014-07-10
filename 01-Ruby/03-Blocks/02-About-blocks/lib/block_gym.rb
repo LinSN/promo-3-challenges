@@ -19,4 +19,4 @@ def transform(element)
   #TODO:  Simply execute the given block on element
   yield(element)
 end
-#puts tag("h1",["id","title"]){"Some Title"}
+puts tag("h1",["id","title"]){"Some Title"}
