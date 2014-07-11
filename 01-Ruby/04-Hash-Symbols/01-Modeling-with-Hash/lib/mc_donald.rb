@@ -31,9 +31,9 @@ def calories_counter(*orders)
      "Potatoes"=> 130,
      "Coca"=> 160,
      "Sprite"=> 170,
-     "Happy Meal" => 580,
-     "Best Of Big Mac" => 590,
-     "Best Of Royal Cheese" => 430
+     "Happy Meal" => poor_calories_counter("Cheese Burger", "French fries", "Coca"),
+     "Best Of Big Mac" => poor_calories_counter("Big Mac", "French fries", "Coca"),
+     "Best Of Royal Cheese" => poor_calories_counter("Royal Cheese", "Potatoes", "Sprite")
 
    }
 
