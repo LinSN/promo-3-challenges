@@ -43,9 +43,8 @@ def new_roman_numeral(an_integer)
     result = ""
     integer_to_roman.each do |key,value|
       quotient = an_integer.divmod(key)[0]
-      modulus = an_integer.divmod(key)[1]
+      an_integer = an_integer.divmod(key)[1]
       result << value * quotient
-      an_integer = modulus
     end
     result
 end
