@@ -25,7 +25,7 @@ if my_numbers_array.size == 2
     end
 else
   for i in 1..my_numbers_array.size-2
-    if my_numbers_array[i] < my_numberss_array[i+1] && my_numbers_array[i] != my_numbers_array[i-1]
+    if my_numbers_array[i] < my_numbers_array[i+1] && my_numbers_array[i] != my_numbers_array[i-1]
       my_numbers_array[i] = - my_numbers_array[i]
     end
   end
