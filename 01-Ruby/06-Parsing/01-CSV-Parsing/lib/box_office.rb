@@ -15,11 +15,6 @@ end
 
  movies_max_year.sort_by{ |row| row[2]}.first(number)
 
-
-
-
-
-
   #TODO: return the number most successfull movies max_year
 end
 
