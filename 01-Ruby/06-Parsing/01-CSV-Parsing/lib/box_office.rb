@@ -1,4 +1,4 @@
-# Encoding: utf-8
+#Encoding: utf-8
 require 'csv'
 
 def most_successfull(number, max_year, file_name)
@@ -15,5 +15,3 @@ def most_successfull(number, max_year, file_name)
 
  movies_max_year.sort_by{ |row| row[2]}.first(number)
 end
-
-puts most_successfull(5, 2003, '/Users/nordineslimani/code/LinSN/promo-3-challenges/01-Ruby/06-Parsing/01-CSV-Parsing/lib/movies.csv')
