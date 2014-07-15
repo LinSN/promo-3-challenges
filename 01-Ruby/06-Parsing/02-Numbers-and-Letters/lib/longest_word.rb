@@ -24,7 +24,7 @@ def run_game(attempt, grid, start_time, end_time)
         message: "not an english word"
       }
 
-    elsif attemptIsOnTheGrid?(attempt,grid)
+    elsif attempt_is_on_the_grid?(attempt,grid)
         result = {
           translation: data["term0"]["PrincipalTranslations"]["0"]["FirstTranslation"]["term"],
           time: (end_time - start_time),
@@ -43,7 +43,7 @@ def run_game(attempt, grid, start_time, end_time)
   #TODO: runs the game and return detailed hash of result
 end
 
-def attemptIsOnTheGrid?(attempt,grid)
+def attempt_is_on_the_grid?(attempt,grid)
   tab_bool = []
   attempt = attempt.upcase.split("")
   attempt.each do |attemp_letter|
