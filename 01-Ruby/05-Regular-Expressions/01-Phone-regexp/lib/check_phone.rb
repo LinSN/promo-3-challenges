@@ -1,6 +1,6 @@
 def french_phone_number?(phone_number)
   # TODO: true or false?
-  if phone_number.gsub(/\-|\s/, '') =~ /^0[1-9]\d{8}$/ || phone_number.gsub(/\-|\s/, '') =~ /^\+33\d{9}$/
+  if phone_number.gsub(/\-|\s/, '') =~ /^(\+33|0)[1-9]\d{8}$/
     true
   else
     false
