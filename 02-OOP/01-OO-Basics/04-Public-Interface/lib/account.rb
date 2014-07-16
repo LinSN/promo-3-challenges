@@ -44,7 +44,8 @@ attr_reader :name,:position
     # TODO: Check if there is a password and if so if it is correct
     # TODO: return a string displaying the transactions, BUT NOT return the transaction array !
     if args[:password] == @password
-      @transactions.join(" ")
+      #@transactions.map{|transaction| transaction.to_s}.join("\n")
+      @transactions.map(&:to_s).join("\n") #=> Amelioration
     elsif args.empty?
       'no password given'
     else
@@ -70,7 +71,7 @@ attr_reader :name,:position
   def add_transaction(amount)
     # TODO: add the amount in the transactions array
     # TODO: update the current position (which represents the balance of the account)
-    @transactions << amount
+    @transactions << Transaction.new(amount)
     @position += amount
 
   end
