@@ -1,7 +1,10 @@
 count = 0
 
-welcome_blk = Proc.new do |name| 
+welcome_blk = Proc.new do |name|
   # your code goes here !
+  str = "Welcome #{name}, join your #{count} friend"
+  count += 1
+  str
 end
 
 puts welcome_blk.call("felix") # => Welcome felix, join your 0 friend
