@@ -1,5 +1,6 @@
 require_relative 'cookbook'
 require_relative 'ui'
+require_relative 'recipe'
 
 class Controller
   def initialize(file)
@@ -8,9 +9,20 @@ class Controller
     @ui = UI.new
   end
 
-  def display_receip
-    ui.display(cookbook.list_of_all_recipes)
+  def list
+    puts "---------------------------------"
+    @ui.display(@cookbook.list_of_all_recipes)
+    puts "---------------------------------"
   end
 
+  def create
+    choice = @ui.add_recipe_with_asking
+    @cookbook.add_recipe(Recipe.new(choice[0],choice[1]))
+  end
+
+  def destroy
+    choice = @ui.remove_recipe_with_asking
+    @cookbook.remove_recipe(choice)
+  end
   # TODO: Implement the methods to retrieve, add, and delete recipes through the model
 end

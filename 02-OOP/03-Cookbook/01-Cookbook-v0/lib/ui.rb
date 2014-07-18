@@ -1,13 +1,15 @@
 class UI
 
   def add_recipe_with_asking
-    puts "Add a recipie, please"
-    answer = gets.chomp
-    return answer
+    puts "Add the name of the recipie, please"
+    name = gets.chomp
+    puts "Add the description of the recipie, please"
+    description = gets.chomp
+    return [name,description]
   end
 
   def remove_recipe_with_asking
-    puts "Write the name of the recipie to delete it"
+    puts "Write the index of the recipie to delete it"
     answer = gets.chomp
     return answer
   end

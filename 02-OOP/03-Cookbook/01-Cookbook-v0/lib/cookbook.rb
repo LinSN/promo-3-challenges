@@ -1,36 +1,37 @@
 require 'csv'
+require_relative 'recipe'
 
 class Cookbook
   attr_reader :recipes
 
-  def initialize(file)
+  def initialize(csv_file)
     # TODO: Retrieve the data from your CSV file and store it in an instance variable
     @recipes = []
-    @filepath    = file
+    @filepath = csv_file
   end
 
   def list_of_all_recipes
     @recipes = []
-    CSV.foreach(@filepath) do |row|
-      @recipes << row[0]
+    CSV.foreach(@filepath, col_sep: ',') do |row|
+      @recipes << [row[0],row[1]]
     end
     @recipes
   end
 
-  def add_recipes(name)
-    @recipes << name
-    CSV.open(@filepath, 'w') do |csv|
-      @recipes.each do |recipe|
-        csv << [recipe]
+  def add_recipe(recipe)
+    @recipes << [recipe.name,recipe.description]
+    CSV.open(@filepath, 'w', col_sep: ',') do |csv|
+      @recipes.each do |rcp|
+        csv << rcp
       end
     end
   end
 
-  def delete_recipes(name)
-    @recipes.delete(name)
-    CSV.open(@filepath, 'w', @csv_options) do |csv|
-      @recipes.each do |recipe|
-        csv << [recipe]
+  def remove_recipe(recipe_id)
+    @recipes.delete_at(recipe_id.to_i)
+    CSV.open(@filepath, 'w', col_sep: ',') do |csv|
+      @recipes.each do |rcp|
+        csv << rcp
       end
     end
   end
@@ -40,14 +41,16 @@ class Cookbook
   # And don't forget to use this save method when you have to modify something in your recipes array.
 end
 
-cookbook = Cookbook.new
-print cookbook.list_of_all_recipes
-cookbook.add_recipes("Tarte aux pommes")
-cookbook.add_recipes("cassolette")
-print cookbook.list_of_all_recipes
 
-cookbook.add_recipes("poule o pot")
-print cookbook.list_of_all_recipes
+# cookbook = Cookbook.new('/Users/nordineslimani/code/LinSN/promo-3-challenges/02-OOP/03-Cookbook/01-Cookbook-v0/lib/recipes.csv')
+# print cookbook.list_of_all_recipes
+# tarte = Recipe.new("Tarte a la creme","description tarte")
+# cookbook.add_recipe(tarte)
+# print cookbook.list_of_all_recipes
 
-cookbook.delete_recipes("poule o pot")
-print cookbook.list_of_all_recipes
+# poule_o_pot = Recipe.new("poule o pot","description poule")
+# cookbook.add_recipe(poule_o_pot)
+# print cookbook.list_of_all_recipes
+
+# cookbook.remove_recipe(1)
+# print cookbook.list_of_all_recipes
