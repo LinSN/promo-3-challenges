@@ -15,8 +15,8 @@ class UI
   end
 
   def display(tab)
-    tab.each_with_index do |x,index|
-      puts "#{index} - #{x}"
+    tab.each_with_index do |recipe, index|
+      puts "#{index} - #{recipe.name} - #{recipe.description}"
     end
   end
 

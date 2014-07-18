@@ -11,7 +11,7 @@ class Controller
 
   def list
     puts "---------------------------------"
-    @ui.display(@cookbook.list_of_all_recipes)
+    @ui.display(@cookbook.recipes)
     puts "---------------------------------"
   end
 

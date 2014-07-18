@@ -8,31 +8,30 @@ class Cookbook
     # TODO: Retrieve the data from your CSV file and store it in an instance variable
     @recipes = []
     @filepath = csv_file
-  end
-
-  def list_of_all_recipes
-    @recipes = []
-    CSV.foreach(@filepath, col_sep: ',') do |row|
-      @recipes << [row[0],row[1]]
-    end
-    @recipes
+    load_csv
   end
 
   def add_recipe(recipe)
-    @recipes << [recipe.name,recipe.description]
-    CSV.open(@filepath, 'w', col_sep: ',') do |csv|
-      @recipes.each do |rcp|
-        csv << rcp
-      end
-    end
+    @recipes << recipe
+    store_csv
   end
 
   def remove_recipe(recipe_id)
     @recipes.delete_at(recipe_id.to_i)
+    store_csv
+  end
+
+  def store_csv
     CSV.open(@filepath, 'w', col_sep: ',') do |csv|
       @recipes.each do |rcp|
-        csv << rcp
+        csv.puts [rcp.name,rcp.description]
       end
+    end
+  end
+
+  def load_csv
+    CSV.foreach(@filepath, col_sep: ',') do |row|
+      @recipes << Recipe.new(row[0],row[1])
     end
   end
 
