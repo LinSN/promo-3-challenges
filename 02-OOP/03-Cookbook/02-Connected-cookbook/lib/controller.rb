@@ -1,7 +1,6 @@
 require_relative 'cookbook'
 require_relative 'ui'
 require_relative 'recipe'
-require_relative 'marmiton'
 
 class Controller
   def initialize(cookbook)
@@ -29,7 +28,8 @@ class Controller
   def marmiton
     choice = @ui.search_from_marmiton
     if choice != ""
-      @cookbook.add_recipie_from_marmiton("http://www.marmiton.org/recettes/recherche.aspx?aqt=#{choice}")
+      @cookbook.add_recipie_from_marmiton("http://www.marmiton.org/recettes/recherche.aspx?aqt=#{choice}&sort=markdesc&st=5")
+
     end
   end
   # TODO: Implement the methods to retrieve, add, and delete recipes through the model
