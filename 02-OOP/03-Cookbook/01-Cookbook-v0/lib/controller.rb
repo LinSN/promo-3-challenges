@@ -3,9 +3,9 @@ require_relative 'ui'
 require_relative 'recipe'
 
 class Controller
-  def initialize(file)
+  def initialize(cookbook)
     # Here you should instantiate the Cookbook model with the file
-    @cookbook = Cookbook.new('/Users/nordineslimani/code/LinSN/promo-3-challenges/02-OOP/03-Cookbook/01-Cookbook-v0/lib/recipes.csv')
+    @cookbook = cookbook
     @ui = UI.new
   end
 
