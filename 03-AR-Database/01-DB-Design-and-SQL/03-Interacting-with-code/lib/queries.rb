@@ -24,8 +24,3 @@ def long_tracks(db, min_length)
   min_length = min_length*60*10**3
   db.execute("SELECT Name FROM Track WHERE Milliseconds > #{min_length}; ").flatten
 end
-
-puts number_of_rows(db, "Genre")
-puts sorted_artists(db)
-puts love_tracks(db)
-long_tracks(db, 2)
