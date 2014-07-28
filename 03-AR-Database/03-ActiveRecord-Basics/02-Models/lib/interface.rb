@@ -1,6 +1,8 @@
 require_relative 'config/application'
 require_relative 'models/post'
 
+
+
 def ask(prompt)
   print "#{prompt} "
   gets.to_s.chomp
@@ -13,11 +15,12 @@ def create_post
   created_at = Time.now
 
   # TODO: use your model to create a new Post
+  Post.create(name: name, source_url: source_url, rating: rating, created_at: created_at)
 end
 
 def get_posts
   # TODO: use your model to get all posts
-  posts = ??
+  posts = Post.all
 
   puts '-' * 50
   puts '%-3s %-15s %-16s %s' % %w[# Name Source\ URL Rating]
@@ -30,7 +33,7 @@ def get_posts
 end
 
 def delete_posts
-  # TODO: use your model to remove all posts
+  Post.destroy_all
 end
 
 while true
