@@ -11,7 +11,6 @@ def ask(prompt)
 end
 
 def create_post(user)
-  p user.posts
   name = ask('Name:')
   source_url = ask('Source URL:')
   rating = ask('Rating:').to_i
@@ -28,6 +27,7 @@ def list_posts(user)
   posts.each do |post|
     puts '%-3s %-15s %-20s %-30s %s' % [post.id.to_s.green, post.name, post.source_url, post.date, post.rating.to_s.red]
   end
+end
 
 def delete_posts(user)
   # TODO: use ActiveRecord to delete all posts of current user
