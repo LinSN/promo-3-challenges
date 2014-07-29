@@ -26,7 +26,7 @@ def list_posts(user)
   # TODO: use ActiveRecord to get all posts of the current user
   posts = user.posts.all
   posts.each do |post|
-    puts '%-3s %-15s %-20s %-30s %s' % [post.id.to_s.green, post.name, post.source_url, post.date, post.rating.to_s.blue]
+    puts '%-3s %-15s %-20s %-30s %s' % [post.id.to_s.green, post.name, post.source_url, post.date, post.rating.to_s.red]
   end
 end
 
