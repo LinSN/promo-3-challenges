@@ -17,7 +17,11 @@ def create_post
 end
 
 def get_posts
+<<<<<<< HEAD
   posts = DB.execute("SELECT * FROM posts")
+=======
+  posts = DB.execute('TODO: write the SQL query to get all posts')
+>>>>>>> ba5fc0ee5c682b443a140ff22922c4ab87066e78
 
   puts '-' * 50
   puts '%-3s %-15s %-20s %-30s %s' % ['#', 'Name', 'Source URL', 'Created At', 'Rating']
