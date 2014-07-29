@@ -5,6 +5,7 @@ class CreatePosts < ActiveRecord::Migration
       t.datetime  :date
       t.string    :source_url
       t.integer   :rating
+      t.belongs_to :user
     end
   end
 end
