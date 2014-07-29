@@ -3,6 +3,7 @@ require_relative 'models/post'
 require_relative 'models/user'
 require 'colorize'
 
+<<<<<<< HEAD
 User.where(name: "Nordine", email: "nono@nono.com").first_or_create
 
 def ask(prompt)
@@ -27,6 +28,36 @@ def list_posts(user)
   posts = user.posts.all
   posts.each do |post|
     puts '%-3s %-15s %-20s %-30s %s' % [post.id.to_s.green, post.name, post.source_url, post.date, post.rating.to_s.red]
+=======
+def ask(prompt)
+  print "#{prompt} "
+  gets.to_s.chomp
+end
+
+def create_post(user)
+  name = ask('Name:')
+  source_url = ask('Source URL:')
+  rating = ask('Rating:')
+  post_params = { name: name, source_url: source_url, date: Time.now, rating: rating }
+
+  # TODO: use ActiveRecord to add a new post for the user logged in!
+end
+
+def list_posts(user)
+  # TODO: use ActiveRecord to get all posts of the current user
+end
+
+def delete_posts(user)
+  # TODO: use ActiveRecord to delete all posts of current user
+end
+
+while true
+  logged_in = false
+
+  until logged_in
+    puts 'Please login with your <id>'
+    # TODO: instantiate a user with his <id>
+>>>>>>> ba5fc0ee5c682b443a140ff22922c4ab87066e78
   end
 end
 
@@ -54,7 +85,11 @@ while logged_in
   puts "3. Delete all posts"
   puts "4. Exit"
 
+<<<<<<< HEAD
   case ask('>').to_i
+=======
+  case ask('>')
+>>>>>>> ba5fc0ee5c682b443a140ff22922c4ab87066e78
   when 1 then create_post(user)
   when 2 then list_posts(user)
   when 3 then delete_posts(user)

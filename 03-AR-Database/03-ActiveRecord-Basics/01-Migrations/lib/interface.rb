@@ -18,7 +18,11 @@ end
 
 def get_posts
 <<<<<<< HEAD
+<<<<<<< HEAD
   posts = DB.execute("SELECT * FROM posts")
+=======
+  posts = DB.execute('TODO: write the SQL query to get all posts')
+>>>>>>> ba5fc0ee5c682b443a140ff22922c4ab87066e78
 =======
   posts = DB.execute('TODO: write the SQL query to get all posts')
 >>>>>>> ba5fc0ee5c682b443a140ff22922c4ab87066e78
