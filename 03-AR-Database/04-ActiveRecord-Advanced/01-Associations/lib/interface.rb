@@ -5,6 +5,8 @@ require 'colorize'
 
 User.where(name: "Nordine", email: "nono@nono.com").first_or_create
 
+User.where(name: 'toto', email: 'toto@toto.com').first_or_create
+
 def ask(prompt)
   print "#{prompt} "
   gets.to_s.chomp
