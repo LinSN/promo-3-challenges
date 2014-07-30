@@ -1,6 +1,35 @@
 .container {
-  margin: 0 auto;  
-  width: 840px;
+  margin: 0 auto;
+  width: 840px;}
+
+#carre{
+  width: 200px;
+  height: 200px;
+  background-color: #FF7E20;
+  border-radius: 7px;
+  position: absolute;
+  margin: auto;
+  left:0;
+  right:0;
+  bottom:0;
+  top:0;
+  border: 0.01px solid #6D61FF;
 }
 
-/*Add some CSS rules to design your form */ 
+body{
+  background-color: black;
+}
+form{
+  color: white;
+}
+
+#carre h1{
+  color:white;
+  position: relative;
+  margin: auto;
+  float:right;
+  margin-top: 160px;
+
+}
+
+/*Add some CSS rules to design your form */
