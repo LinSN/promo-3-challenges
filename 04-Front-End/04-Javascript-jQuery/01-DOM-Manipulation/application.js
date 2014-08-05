@@ -12,7 +12,7 @@ function run_challenges() {
 
 
   // Ex 2. Fill the content of the email input with your email
-  $('#email').attr('value',"nono@non.fr")
+  $('#email').val("nono@non.fr")
 
 
   // Ex 3. Replace the email hint (next to the input) with 'This is my email now'
@@ -33,7 +33,7 @@ function run_challenges() {
   // Ex 6. Say there is a 15th team added to the table.
   //       Add a row at the bottom, this new team should have zero points.
 
-  $('.table tr:last').after('<tr><td>15</td><td>RCAles</td><td>0</td></tr>');
+  $('.table tr:last').after('<tr><td>' + (team_count+1) + '</td><td>RCAles</td><td>0</td></tr>');
 
   // Ex 7. Write some code to sum all points given to all teams
   var sum = 0;  // TODO: replace 0 with your sum result, keep the sum variable.
