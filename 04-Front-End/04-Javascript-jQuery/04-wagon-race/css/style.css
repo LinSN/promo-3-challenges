@@ -10,6 +10,10 @@
   border: 1px dotted black;
 }
 
-.racer_table td.active {
-  background-color: black;
+#player1_race td.active {
+  content: url(../img/player_1.png);
+}
+
+#player2_race td.active {
+  content: url(../img/player_2.png);
 }

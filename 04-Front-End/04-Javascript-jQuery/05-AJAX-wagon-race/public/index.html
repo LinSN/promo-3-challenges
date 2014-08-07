@@ -1,13 +1,31 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html class="no-js">
   <head>
-    <meta charset="utf-8" />
-    <title>JAJAX Wagon Race</title>
-    <link rel="stylesheet" href="/css/normalize.css" />
-    <link rel="stylesheet" href="/css/main.css" />
-  </head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Wagon race</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
   <body>
-    <script src="/js/game.js"></script>
+
+    <div class="players">
+      <div id="player1_hint"></div>
+      <div id="player2_hint"></div>
+    </div>
+
+    <button id="start-button" type="button" hidden="true">Start a new Game!</button>
+
+    <form id="form-name" hidden="true">
+      Player 1: <input id="player1-name" type="text" name="name"><br>
+      Player 2: <input id="player2-name" type="text" name="name"><br>
+      <input type="submit" value="Submit">
+    </form>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/game.js"></script>
   </body>
 </html>
