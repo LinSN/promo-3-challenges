@@ -1,31 +1,81 @@
-.racer_table {
-  margin: auto;
-  margin-top: 4em;
+#submit2{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-radius: 0px 0px 2px 2px;
+  border: none;
+  color: white;
+  background-color: #ffbc1a;
+  padding-top:5px;
+  outline: none;
+  width: 256px;
 }
 
-.players {
+
+#submit{
+  border-radius: 0px 0px 2px 2px;
+  border: none;
+  color: white;
+  background-color: #ffbc1a;
+  padding-top:5px;
+  outline: none;
+  width: 256px;
+}
+
+input{
+  width: 250px;
   text-align: center;
-  margin-top: 3em;
-  color: #999;
+  outline: none;
+
 }
 
-.players strong {
-  color: #333;
+form{
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 240px;
+  right: 0;
+  bottom: 0;
+  height: 100px;
+  width: 250px;
+  outline: none;
+  z-index: 2;
 }
 
-.racer_table td {
-  background-color: white;
-  height: 30px;
-  width: 30px;
-  border: 1px solid #bbb;
+.racer_table td{
+  text-align: center;
+  background-color: #ffbc1a;
+  height: 20px;
+  width: 20px;
 }
 
-.racer_table #player1_race td.active {
-  background: url('../img/player_1.png') no-repeat;
-  background-size: 30px;
+
+.racer_table .active{
+  background-color: black;
+}
+table{
+  z-index: 1;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 150px;
+  width: 60%;
+  outline: none;
 }
 
-.racer_table #player2_race td.active {
-  background: url('../img/player_2.png') no-repeat;
-  background-size: 30px;
+#restart{
+z-index: 10;
+position: absolute;
+margin: auto;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+height: 150px;
+width: 60%;
+outline: none;
+background-color: #ffbc1a
 }

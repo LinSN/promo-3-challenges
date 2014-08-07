@@ -1,31 +1,38 @@
-<!doctype html>
-<html class="no-js">
+<!DOCTYPE html>
+<html>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Wagon race</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/main.css">
+    <meta charset="utf-8" />
+    <title>JAJAX Wagon Race</title>
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="/css/main.css" />
   </head>
-  <body>
 
-    <div class="players">
+  <body>
+     <input type="submit" id="submit2" value="START A NEW GAME" />
+    <form id="form">
+      <input id="player1" type="text" placeholder="player1" />
+      <input id="player2" type="text" placeholder="player2" />
+      <input id="rows_number" type="text" placeholder="grid size" />
+       <input type="submit" id="submit" value="GO" />
+    </form>
+
+      <div class="players">
       <div id="player1_hint"></div>
       <div id="player2_hint"></div>
     </div>
 
-    <button id="start-button" type="button" hidden="true">Start a new Game!</button>
+    <table class="racer_table">
+      <tr id="player1_race">
+        <td class="active"></td>
+      </tr>
+      <tr id="player2_race">
+        <td class="active"></td>
+      </tr>
+    </table>
 
-    <form id="form-name" hidden="true">
-      Player 1: <input id="player1-name" type="text" name="name"><br>
-      Player 2: <input id="player2-name" type="text" name="name"><br>
-      <input type="submit" value="Submit">
-    </form>
+    <button id="restart">Restart</button>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="js/game.js"></script>
+    <script src="/js/game.js"></script>
   </body>
 </html>
